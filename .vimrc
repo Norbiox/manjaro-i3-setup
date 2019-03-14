@@ -1,0 +1,15 @@
+set clipboard=unnamed
+set mouse=a
+set number	
+set showmatch
+set hlsearch
+set smartcase
+set autoindent
+set expandtab
+set shiftwidth=4
+set smartindent
+set smarttab
+set softtabstop=4
+set undolevels=1000
+syntax on
+set colorcolumn=80

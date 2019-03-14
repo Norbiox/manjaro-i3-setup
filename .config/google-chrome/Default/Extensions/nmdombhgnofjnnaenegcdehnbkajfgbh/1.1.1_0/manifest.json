@@ -1,0 +1,21 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "js/common.js", "js/background.js" ]
+      }
+   },
+   "description": "CodinGame Sync allows you to synchronize an external file with the CodinGame editor, so you can use your own code editor.",
+   "icons": {
+      "128": "images/icone128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy1FrrFDRTDG/gw/6gyCh2tEMEkAzgCq9c5+r+HkasHxHu+M0ptJF4QIRA33XVLc0Zy5dfnFCE4vTAYqf55hquP94TnocjjZqY2cSoGgpTIiZUtsNZ4GwOJ0pqsPW1CuahvxEuptjsspiudftqMNw/D6eyj1l/LVQNe6TVVqhJ2NTvaQYk6KXhbdZs0MXeFSs0S7BJjGPTjfR85IFICRgG+3bFDLnKatauhw/fSOIAcAODq0pY7JJ94yFp42cTmcc33l/filRfbBAT3dni61pZZCqjqPWCgQwWn1MpoKhvyWBkf7mk2FqtR7AkcZKhYhYQAPOmX87ADP8vE4FV22OGQIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "35",
+   "name": "CodinGame Sync - App",
+   "permissions": [ {
+      "fileSystem": [ "write", "retainEntries", "directory" ]
+   }, "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.1",
+   "version_name": "1.1.1 App"
+}

@@ -1,0 +1,19 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "http://ipp-google.innogames.de/?game=west&ref=ig_goows"
+      },
+      "urls": [ "http://www.the-west.net/" ]
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7Tv1U/01PnYFseW7YWKQeiEzUo5H5F9DB7ow1ir/STf3UKq/IjG7okPFybh6HQaoZP+Aws5F6jKlFvaUgCt6YTIde8OvQvMzeA/sO/sxjepU2q3E6NCpAVAmmp0rqnpK55Cjhc7gJm2IRzUwEjT1RoMnrUsBY3/RI4JLPmWlfgwIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_appName__",
+   "permissions": [  ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.5"
+}

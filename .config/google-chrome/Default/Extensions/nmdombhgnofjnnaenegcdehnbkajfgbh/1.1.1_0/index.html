@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html data-ng-app='CGSync' data-ng-csp>
+
+<head>
+    <title>CodinGame Sync</title>
+    <link rel='stylesheet' type='text/css' href='lib/angular-csp.css' />
+    <link rel='stylesheet' type='text/css' href='css/app.css' />
+
+    <script src='lib/angular.min.js' type='text/javascript'></script>
+    <script src='js/common.js' type='text/javascript'></script>
+    <script src='js/app.js' type='text/javascript'></script>
+</head>
+
+<body>
+<!-- MAIN PANEL -->
+    <div id='main-panel' data-ng-controller='MainCTRL as MC'>
+        
+            <div class='topBar'>
+                <div class='logoBar'>
+                    <img class='imgNav' src='images/img_logo_codingame_sync_hud.png' alt='Logo'>
+                    <button class='btnNav' data-ng-click='MC.goToBackground()'>
+                        <img class='icon' src='images/icon_minimize.png' alt='minimize'>
+                    </button>
+                </div>
+            </div>
+            
+            
+            <div class='content'>
+                        
+	            <div class="bloc-header-tabs">
+	            	<button class="tab" ng-class="{selected: selected === tab}" ng-click="setSelected(tab)" ng-repeat="tab in tabs" title="{{ tab.title }}">{{ tab.title }}</button><button class="tab" ng-class="{selected: selected === settingsTab}" ng-click="setSelected(settingsTab)">Settings</button>
+	            </div>
+	            <div class="bloc-inner">
+	            	<div class="puzzlePanel" ng-if="selected.title === 'Puzzle'">
+	            	
+            	        <!-- CHOOSE FILE PANEL-->
+				        <div id='choosePanel' data-ng-if='!firstAction && !fileChosen.loaded && appReady'>
+				            <h2>Please select a file to start</h2>
+				            <button class='btn btnChoose' data-ng-click='MC.chooseFile()' title='Choose a file'>CHOOSE A LOCAL FILE</button>
+				            
+				            <div class="notifications">
+        						<span ng-repeat='alert in alerts' class='notif notif-{{alert.Status}}'>{{alert.Content}}</span>
+        					</div>
+				        </div>
+	            	
+            	        <!-- FIRST ACTION -->
+				        <div id='firstActionPanel'  data-ng-if='!firstAction && fileChosen.loaded'>
+		                    <div class="fileSelected">File '{{fileChosen.name}}' selected</div>
+	            			
+		                    <h2>Please choose your first action:</h2>
+	                        <button class='btn btnFA first' data-ng-click='MC.firstAction("Download")' title='Will overwrite your file content from the CG IDE'>DOWNLOAD FROM CODINGAME TO LOCAL FILE</button>
+	                        <button class='btn btnFA' data-ng-click='MC.firstAction("Upload")' title='Will overwrite the CG content with your file content'>UPLOAD FROM LOCAL FILE TO CODINGAME</button>
+	                        
+	                        <button class='btnChangeFile2' title='{{fileChosen.name}} ({{fileChosen.size | bytes }})' data-ng-click='MC.chooseFile()'><img class='icon' src='images/icon_change_file.png' alt='changeFile'> CHANGE LOCAL FILE</button>
+	                        
+	                       	<div class="notifications">
+        						<span ng-repeat='alert in alerts' class='notif notif-{{alert.Status}}'>{{alert.Content}}</span>
+        					</div>
+				        </div>
+	            	
+	            		<!-- Code -->
+	            		<div ng-if='firstAction && fileChosen.loaded'>
+	            			<div class="file-selection">
+	            				<h2>Selected file: {{fileChosen.name}}</h2>
+	            				<button class='btnChangeFile' title='{{fileChosen.name}} ({{fileChosen.size | bytes}})' data-ng-click='MC.chooseFile()'><img class='icon' src='images/icon_change_file.png' alt='changeFile'> CHANGE LOCAL FILE</button>
+	            			</div>
+		                    <div class="code">
+		                        <button class='btnForceDownload' ng-click='MC.downloadCode()' title='Will overwrite your file content from the CG IDE'>FORCE DOWNLOAD</button>
+		                        <button class='btnForceUpload' ng-click='MC.uploadCode()' title='Will overwrite the CG content with your file content'>FORCE UPLOAD</button>
+								<button class='btnStopSynchro' ng-click='stopSynchro()' title='Will stop synchronization'>STOP SYNC</button>
+		                    </div>
+		                    
+		                    <div>
+		                    	<span class='sync' data-ng-class='{"uptodate":!needUpdate}' data-ng-if='!needUpdate'>Sync: Up-to-date</span>
+		                    	<span class='sync' data-ng-class='{"inprogress":needUpdate}' data-ng-if='needUpdate'>Sync: In Progress</span>
+	                    	</div>
+	                    	
+	                    	<div class="notifications">
+        						<span ng-repeat='alert in alerts' class='notif notif-{{alert.Status}}'>{{alert.Content}}</span>
+        					</div>
+	                    </div>
+	            	</div>
+	            
+	                <div id='optionsPanel' ng-if="selected === settingsTab">
+	                    <!-- Configure your app' -->
+	                    <div>
+                            <button class='btnReset transparent' data-ng-click='MC.saveSettings(null, "RESET", true)'>
+                            	<img class='icon' src='images/icon_reset_all_settings.png' alt='resetAll'>
+                            	<span>RESET ALL SETTINGS</span>
+                            </button>
+	
+							<!-- 
+	                        <div class='firstOptionsItem' title='Automatically starts this plugin when opening a new CG IDE'>
+	                            <p class="subtitle-settings">Auto Start</p>
+	                            <div class='settings'>
+	                                <input type='radio' id='autoStart_ON' name='autoStart' data-ng-value=true data-ng-model='settings.autoStart' data-ng-change='MC.saveSettings("autoStart", "AUTO_START", settings.autoStart)'>
+	                                <input type='radio' id='autoStart_OFF' name='autoStart' data-ng-value=false data-ng-model='settings.autoStart' data-ng-change='MC.saveSettings("autoStart", "AUTO_START", settings.autoStart)'>
+	                                <label for='autoStart_ON' data-ng-class='{selected: settings.autoStart}'>ON</label>
+	                                <label for='autoStart_OFF' data-ng-class='{selected: !settings.autoStart}'>OFF</label>
+	                            </div>
+	                        </div>
+	                         -->
+	
+	                        <div class='optionsItem' title='Automatically hides this plugin during synchronization'>
+	                            <p class="subtitle-settings">Auto Background</p>
+	                            <div class='settings'>
+	                                <input type='radio' id='autoBackGround_ON' name='autoBackGround' data-ng-value=true data-ng-model='settings.autoBackGround' data-ng-change='MC.saveSettings("autoBackGround", "AUTO_BACKGROUND", settings.autoBackGround)'>
+	                                <input type='radio' id='autoBackGround_OFF' name='autoBackGround' data-ng-value=false data-ng-model='settings.autoBackGround' data-ng-change='MC.saveSettings("autoBackGround", "AUTO_BACKGROUND", settings.autoBackGround)'>
+	                                <label for='autoBackGround_ON' data-ng-class='{selected: settings.autoBackGround}'>ON</label>
+	                                <label for='autoBackGround_OFF' data-ng-class='{selected: !settings.autoBackGround}'>OFF</label>
+	                            </div>
+	                        </div>
+	                        <div class='optionsItem' title='Automatically launches a play after a code update'>
+	                            <p class="subtitle-settings">Auto Play</p>
+	                            <div class='settings'>
+	                                <input type='radio' id='autoPlay_ON' name='autoPlay' data-ng-value=true data-ng-model='settings.autoPlay' data-ng-change='MC.saveSettings("autoPlay", "AUTO_PLAY", settings.autoPlay)'>
+	                                <input type='radio' id='autoPlay_OFF' name='autoPlay' data-ng-value=false data-ng-model='settings.autoPlay' data-ng-change='MC.saveSettings("autoPlay", "AUTO_PLAY", settings.autoPlay)'>
+	                                <label for='autoPlay_ON' data-ng-class='{selected: settings.autoPlay}'>ON</label>
+	                                <label for='autoPlay_OFF' data-ng-class='{selected: !settings.autoPlay}'>OFF</label>
+	                            </div>
+	                        </div>
+	                        <div class='optionsItem' title='Automatically prompts me to backup my code when doing "Fight in Arena"'>
+	                            <p class="subtitle-settings">Prompt for backup on Submit (multiplayer only)</p>
+	                            <div class='settings'>
+	                                <input type='radio' id='autoBackUp_ON' name='autoBackUp' data-ng-value=true data-ng-model='settings.autoBackUp' data-ng-change='MC.saveSettings("autoBackUp","SAVE_ON_SUBMIT", settings.autoBackUp)'>
+	                                <input type='radio' id='autoBackUp_OFF' name='autoBackUp' data-ng-value=false data-ng-model='settings.autoBackUp' data-ng-change='MC.saveSettings("autoBackUp", "SAVE_ON_SUBMIT", settings.autoBackUp)'>
+	                                <label for='autoBackUp_ON' data-ng-class='{selected: settings.autoBackUp}'>ON</label>
+	                                <label for='autoBackUp_OFF' data-ng-class='{selected: !settings.autoBackUp}'>OFF</label>
+	                            </div>
+	                        </div>
+	                        <div class='optionsItem' title='Enables read-write in CG IDE and synchronizes the file both ways'>
+	                            <p class="subtitle-settings">Enable 2-way data binding</p>
+	                            <div class='settings'>
+	                                <input type='radio' id='disableReadOnly_ON' name='disableReadOnly' data-ng-value=true data-ng-model='settings.disableReadOnly' data-ng-change='MC.saveSettings("disableReadOnly", "DISABLE_RO", settings.disableReadOnly)'>
+	                                <input type='radio' id='disableReadOnly_OFF' name='disableReadOnly' data-ng-value=false data-ng-model='settings.disableReadOnly' data-ng-change='MC.saveSettings("disableReadOnly", "DISABLE_RO", settings.disableReadOnly)'>
+	                                <label for='disableReadOnly_ON' data-ng-class='{selected: settings.disableReadOnly}'>ON</label>
+	                                <label for='disableReadOnly_OFF' data-ng-class='{selected: !settings.disableReadOnly}'>OFF</label>
+	                            </div>
+	                        </div>
+	                        <div class='optionsItem' title='Preconfigures the first action'>
+	                            <p class="subtitle-settings">Default action on launch</p>
+	                            <div class='settings'>
+	                                <input type='radio' id='autoFirstAction_DL' name='autoFirstAction' data-ng-value='"Download"' data-ng-model='settings.autoFirstAction' data-ng-change='MC.saveSettings("autoFirstAction", "AUTO_FA", settings.autoFirstAction)'>
+	                                <input type='radio' id='autoFirstAction_ASK' name='autoFirstAction' data-ng-value='"Ask Me What To Do"' data-ng-model='settings.autoFirstAction' data-ng-change='MC.saveSettings("autoFirstAction", "AUTO_FA", settings.autoFirstAction)'>
+	                                <input type='radio' id='autoFirstAction_UP' name='autoFirstAction' data-ng-value='"Upload"' data-ng-model='settings.autoFirstAction' data-ng-change='MC.saveSettings("autoFirstAction", "AUTO_FA", settings.autoFirstAction)'>
+	                                <label for='autoFirstAction_DL' data-ng-class='{selected: settings.autoFirstAction === "Download"}'>DOWNLOAD</label>
+	                                <label for='autoFirstAction_ASK' data-ng-class='{selected: settings.autoFirstAction === "Ask Me What To Do"}'>ASK ME </label>
+	                                <label for='autoFirstAction_UP' data-ng-class='{selected: settings.autoFirstAction === "Upload"}'>UPLOAD</label>
+	                            </div>
+	                        </div>
+	                        
+	                        <!-- 
+	                        <div class='previewItem' title='Shows the preview of the code currently loaded in this plugin'>
+	                            <p class="subtitle-settings">
+	                                Debug local cache <img class='icon' src='images/icon_preview.png' alt='Preview'>
+	                            </p>
+	                            <div class='settings'>
+	                                <input type='radio' id='showPreview_ON' name='showPreview' data-ng-value=true data-ng-model='settings.showPreview' data-ng-change='MC.saveSettings("showPreview", "SHOW_PREVIEW", settings.showPreview)'>
+	                                <input type='radio' id='showPreview_OFF' name='showPreview' data-ng-value=false data-ng-model='settings.showPreview' data-ng-change='MC.saveSettings("showPreview", "SHOW_PREVIEW", settings.showPreview)'>
+	                                <label for='showPreview_ON' data-ng-class='{selected: settings.showPreview}'>ON</label>
+	                                <label for='showPreview_OFF' data-ng-class='{selected: !settings.showPreview}'>OFF</label>
+	                            </div>
+	                            <pre class='previewCode' data-ng-if='settings.showPreview'>{{fileChosen.content}}</pre>
+	                        </div> -->
+	                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+2019/03/14-11:37:21.924 1f5a Reusing MANIFEST /home/norbert/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
+2019/03/14-11:37:21.924 1f5a Recovering log #27
+2019/03/14-11:37:21.926 1f5a Reusing old log /home/norbert/.config/google-chrome/Default/Sync Data/LevelDB/000027.log 
+2019/03/14-12:09:05.907 2201 Level-0 table #32: started
+2019/03/14-12:09:05.922 2201 Level-0 table #32: 120881 bytes OK
+2019/03/14-12:09:05.928 2201 Delete type=0 #27
