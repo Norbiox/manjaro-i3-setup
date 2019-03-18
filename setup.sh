@@ -12,8 +12,11 @@ yay -S google-chrome
 yay -S zathura # pdf viewer
 yay -R epdfview
 
-yay -S pulseaudio pulseaudio-alsa pulsemixer
+# yay -S pulseaudio pulseaudio-alsa pulsemixer
 
 yay -S arc-gtk-theme
 yay -S nerd-fonts-fira-code
 yay -S ttf-fira-sans
+
+yay -S python-pip
+yay -S python-virtualenv
