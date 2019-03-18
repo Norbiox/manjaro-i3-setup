@@ -2,7 +2,7 @@
 # Profile file. Runs on login
 
 export PATH="$PATH:$HOME/.scripts"
-export TERMINAL="urxvt"
+export TERMCMD="urxvt"
 export EDITOR="vim"
 export BROWSER="google-chrome-stable"
 export FILE="ranger"

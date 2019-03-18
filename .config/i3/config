@@ -24,12 +24,14 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+
+#---Font---#
+font xft:Fira Sans Medium 11
+
+
 #---Basic Definitions---#
 set $mod Mod4
 floating_modifier $mod
-
-font xft:Fira Sans Medium 11
-set $bar-height 22
 
 new_window pixel 1
 new_float normal
@@ -129,7 +131,7 @@ bindsym $mod+m              bar mode toggle
 # bindsym $mod+p
 # bindsym $mod+Shift+p
 
-bindsym $mod+q              kill
+bindsym $mod+q              split toggle
 bindsym $mod+Shift+q        kill
 
 bindsym $mod+r              mode "$resize"
@@ -138,7 +140,7 @@ bindsym $mod+Shift+r        restart
 bindsym $mod+s              layout stacking
 bindsym $mod+Shift+s        sticky toggle
 
-bindsym $mod+t              split toggle
+# bindsym $mod+t
 # bindsym $mod+Shift+t
 
 # bindsym $mod+u
