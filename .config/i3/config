@@ -82,6 +82,7 @@ bindsym $mod+Shift+space    floating toggle
 
 bindsym $mod+Tab            workspace back_and_forth
 
+bindsym $mod+grave          exec get-emoji
 
 #---Letter Shortcuts---#
 bindsym $mod+a              focus parent
@@ -301,6 +302,7 @@ bar {
 	status_command i3status
 	position top
         height 23
+        separator_symbol " | "
 
 	bindsym button4 nop
 	bindsym button5 nop
