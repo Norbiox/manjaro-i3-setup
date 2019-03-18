@@ -62,14 +62,18 @@ Xcursor.size:                     0
 
 
 ! #---URxvt---#
-URxvt.perl-ext-common: font-size
+URxvt.perl-ext-common: default,matcher,keyboard-select,resize-font
 
-!URxvt.keysym.C-plus:     font-size:increase
-!URxvt.keysym.C-minus:   font-size:decrease
-URxvt.keysym.C-plus:   font-size:incglobal
-URxvt.keysym.C-minus: font-size:decglobal
-URxvt.keysym.C-equal:  font-size:reset
-URxvt.keysym.C-slash:  font-size:show
+URxvt.url-launcher:             /usr/bin/xdg-open
+URxvt.matcher.button:           1
+
+URxvt.keysym.M-Escape:          perl:keyboard-select:activate
+URxvt.keysym.M-slash:           perl:keyboard-select:search
+URxvt.keyboard-select.clipboard:    true
+
+!URxvt.keysym.M-c:               perl:clipboard:copy
+!URxvt.keysym.M-v:               perl:clipboard:paste
+!URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
 
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
@@ -97,10 +101,6 @@ URxvt.keysym.Control-Up:          \033[1;5A
 URxvt.keysym.Shift-Control-Up:    \033[1;6A
 URxvt.keysym.Control-Down:        \033[1;5B
 URxvt.keysym.Shift-Control-Down:  \033[1;6B
-! Rxvt.perl-ext-common:             ...,clipboard
-! URxvt.keysym.M-C-c:               perl:clipboard:copy
-! URxvt.keysym.M-v:                 perl:clipboard:paste
-! URxvt.keysym.M-C-v:               perl:clipboard:paste_escaped
 ! URxvt*termName:                   string
 ! URxvt*geometry:                   geometry
 ! URxvt*chdir:                      string
