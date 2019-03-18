@@ -90,11 +90,15 @@ fi
 
 unset use_color safe_term match_lhs sh
 
+# Aliases
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
+
+# User aliases
+alias upd="sudo pacman -Syyu && sudo yay -Syu"
 
 xhost +local:root > /dev/null 2>&1
 
