@@ -62,7 +62,6 @@ Xcursor.size:                     0
 
 
 ! #---URxvt---#
-<<<<<<< HEAD
 URxvt.perl-ext-common: default,matcher,keyboard-select,resize-font
 
 URxvt.url-launcher:             /usr/bin/xdg-open
@@ -75,16 +74,6 @@ URxvt.keyboard-select.clipboard:    true
 !URxvt.keysym.M-c:               perl:clipboard:copy
 !URxvt.keysym.M-v:               perl:clipboard:paste
 !URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
-=======
-URxvt.perl-ext-common: font-size
-
-!URxvt.keysym.C-plus:     font-size:increase
-!URxvt.keysym.C-minus:   font-size:decrease
-URxvt.keysym.C-plus:   font-size:incglobal
-URxvt.keysym.C-minus: font-size:decglobal
-URxvt.keysym.C-equal:  font-size:reset
-URxvt.keysym.C-slash:  font-size:show
->>>>>>> 5e898992c961bdadf4f26662c4e5f4ef6797c194
 
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
