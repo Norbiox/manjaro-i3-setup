@@ -107,7 +107,7 @@ bindsym $mod+Shift+g        mode "$mode_gaps"
 bindsym $mod+h              focus left
 bindsym $mod+Shift+h        move left
 
-# bindsym $mod+i
+bindsym $mod+i              resize grow height 5 px or 5 ppt
 bindsym $mod+Shift+i        exec $TERMCMD -e 'htop'
 
 bindsym $mod+j              focus down
@@ -125,10 +125,10 @@ bindsym $mod+m              bar mode toggle
 # bindsym $mod+n
 # bindsym $mod+Shift+n
 
-# bindsym $mod+o
+bindsym $mod+o              resize shrink height 5 px or 5 ppt
 # bindsym $mod+Shift+o
 
-# bindsym $mod+p
+bindsym $mod+p              resize grow width 5 px or 5 ppt
 # bindsym $mod+Shift+p
 
 bindsym $mod+q              split toggle
@@ -143,7 +143,8 @@ bindsym $mod+Shift+s        sticky toggle
 # bindsym $mod+t
 # bindsym $mod+Shift+t
 
-# bindsym $mod+u
+bindsym $mod+u              resize shrink width 5 px or 5 ppt
+
 # bindsym $mod+Shift+u
 
 # bindsym $mod+v
@@ -273,25 +274,25 @@ mode "$mode_system" {
 # Resize window (you can also use the mouse for that)
 set $mode_resize use vim keys or arrow keys to resize window
 mode "$mode_resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+    # These bindings trigger as soon as you enter the resize mode
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 5 px or 5 ppt
+    bindsym j resize grow height 5 px or 5 ppt
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # exit resize mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 #---i3bar---#
