@@ -12,12 +12,15 @@ sudo pacman -R \
 
 yay -S \
     google-chrome \
-    zathura \
+    zathura zathura-pdf-poppler zathura-cb zathura-djvu zathura-ps \
     arc-gtk-theme \
     nerd-fonts-fira-code \
-    tff-fira-sans \
+    ttf-fira-sans \
+    ttf-symbola \
     python-pip \
-    python-virtualenv
-    urxvt-resize-font-git
+    python-virtualenv \
+    urxvt-resize-font-git \
+    sxiv
+
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
