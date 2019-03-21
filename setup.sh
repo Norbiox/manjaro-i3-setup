@@ -22,7 +22,8 @@ yay -S \
     urxvt-resize-font-git \
     sxiv \
     i3blocks \
-    xorg-xwininfo
+    xorg-xwininfo \
+    sysstat
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
