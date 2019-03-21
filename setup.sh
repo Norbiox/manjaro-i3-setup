@@ -21,7 +21,7 @@ yay -S \
     python-virtualenv \
     urxvt-resize-font-git \
     sxiv \
-    htop-vim-git
+    neofetch
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
