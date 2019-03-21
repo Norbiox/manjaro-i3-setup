@@ -36,3 +36,7 @@ class fzf_select(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
+
+class copy_image_content(Command):
+    def execute(self):
+        self.fm.execute_console('shell xclip -selection clipboard -t image/png -i %s')

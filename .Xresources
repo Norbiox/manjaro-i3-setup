@@ -75,13 +75,15 @@ URxvt.keyboard-select.clipboard:    true
 !URxvt.keysym.M-v:               perl:clipboard:paste
 !URxvt.keysym.M-C-v:             perl:clipboard:paste_escaped
 
-URxvt.depth:                      32
-URxvt*scrollBar:                  false
-URxvt*mouseWheelScrollPage:       true
-URxvt*cursorBlink:                true
+URxvt.depth:                        32
+URxvt*scrollBar:                    false
+URxvt*mouseWheelScrollPage:         true
+URxvt.keysym.Shift-Up:              command:\033]720;1\007
+URxvt.keysym.Shift-Down:            command:\033]721;1\007
+URxvt*cursorBlink:                  true
 !URxvt*background:                 background
 !URxvt*foreground:                 grey
-URxvt*saveLines:                  5000
+URxvt*saveLines:                    5000
 
 ! for 'fake' transparency (without Compton) uncomment the following three lines
 ! URxvt*inheritPixmap:            true

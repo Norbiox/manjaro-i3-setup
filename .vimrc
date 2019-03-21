@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'gabrielelana/vim-markdown'
 call plug#end()
 
 let g:lightline = {
@@ -17,7 +18,7 @@ colorscheme onedark
 syntax on
 
 set relativenumber
-set clipboard=unnamed
+set clipboard=unnamedplus
 set mouse=a
 set number	
 set showmatch

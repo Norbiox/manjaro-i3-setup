@@ -20,7 +20,10 @@ yay -S \
     python-pip \
     python-virtualenv \
     urxvt-resize-font-git \
-    sxiv
+    sxiv \
+    htop-vim-git
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
+
+

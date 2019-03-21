@@ -48,7 +48,7 @@ workspace_auto_back_and_forth yes
 #---Autostart applications---#
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id manjaro-hello
+# exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -65,7 +65,7 @@ exec_always --no-startup-id fix_xcursor
 #---Basic Shortcuts---#
 bindsym $mod+End            mode "$mode_system"
 
-bindsym $mod+Home           exec --no-startup-id blurlock
+bindsym $mod+Escape         exec --no-startup-id blurlock
 
 bindsym $mod+minus          scratchpad show
 bindsym $mod+Shift+minus    move scratchpad
@@ -83,6 +83,7 @@ bindsym $mod+Shift+space    floating toggle
 bindsym $mod+Tab            workspace back_and_forth
 
 bindsym $mod+grave          exec get-emoji
+
 
 #---Letter Shortcuts---#
 bindsym $mod+a              focus parent

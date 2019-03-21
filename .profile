@@ -1,7 +1,7 @@
 #!/bin/sh
 # Profile file. Runs on login
 
-export PATH="$PATH:$HOME/.scripts"
+export PATH="$PATH:$HOME/.scripts:$HOME/.local/bin"
 export TERMCMD="urxvt"
 export EDITOR="vim"
 export BROWSER="google-chrome-stable"
