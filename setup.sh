@@ -21,7 +21,8 @@ yay -S \
     python-virtualenv \
     urxvt-resize-font-git \
     sxiv \
-    neofetch
+    i3blocks \
+    xorg-xwininfo
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer

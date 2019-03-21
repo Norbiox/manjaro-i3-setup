@@ -43,7 +43,17 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
 
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
+
+
+#---Dropdown Windows---#
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_*"] border pixel 3
+for_window [instance="dropdown_*"] move position center
+
 
 #---Autostart applications---#
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -74,15 +84,16 @@ bindsym Print               exec --no-startup-id i3-scrot
 bindsym $mod+Print          --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print    --release exec --no-startup-id i3-scrot -s
 
-bindsym $mod+Return	    exec $TERMCMD
-bindsym $mod+Shift+Return   exec $TERMCMD -e 'bmenu'
+bindsym $mod+Return	    exec --no-startup-id $TERMCMD
+bindsym $mod+Shift+Return   exec --no-startup-id samedir
+bindsym $mod+Ctrl+Return    exec --no-startup-id $TERMCMD -e 'bmenu'
 
 bindsym $mod+space          focus mode_toggle
 bindsym $mod+Shift+space    floating toggle
 
 bindsym $mod+Tab            workspace back_and_forth
 
-bindsym $mod+grave          exec get-emoji
+bindsym $mod+grave          exec --no-startup-id get-emoji
 
 bindsym $mod+colon          exec --no-startup-id dmenu_recency
 
@@ -90,23 +101,23 @@ bindsym $mod+colon          exec --no-startup-id dmenu_recency
 bindsym $mod+a              focus parent
 
 # bindsym $mod+b
-bindsym $mod+Shift+b        exec $BROWSER
+bindsym $mod+Shift+b        exec --no-startup-id $BROWSER
 
 # bindsym $mod+c              
-bindsym $mod+Shift+c        exec $BROWSER "https://calendar.google.com/"
+bindsym $mod+Shift+c        exec --no-startup-id $BROWSER "https://calendar.google.com/"
 
 # bindsym $mod+d
-bindsym $mod+Shift+d        exec $BROWSER "https://drive.google.com/" 
+bindsym $mod+Shift+d        exec --no-startup-id $BROWSER "https://drive.google.com/" 
 # bindsym $mod+Shift+d        --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 bindsym $mod+e              layout toggle split
-bindsym $mod+Shift+e	    exec $EDITOR
+bindsym $mod+Shift+e	    exec --no-startup-id $EDITOR
 
 bindsym $mod+f              fullscreen toggle
-bindsym $mod+Shift+f	    exec $TERMCMD -e $FILE
+bindsym $mod+Shift+f	    exec --no-startup-id $TERMCMD -e $FILE
 
-bindsym $mod+g              exec searchgoogle
-bindsym $mod+Shift+g        exec $BROWSER "https://google.com"
+bindsym $mod+g              exec --no-startup-id searchgoogle
+bindsym $mod+Shift+g        exec --no-startup-id $BROWSER "https://google.com"
 bindsym $mod+Ctrl+g         mode "$mode_gaps"
 
 bindsym $mod+h              focus left
@@ -114,7 +125,7 @@ bindsym $mod+Shift+h        move left
 bindsym $mod+Ctrl+h         resize shrink width 5 px or 5 ppt
 
 # bindsym $mod+i
-bindsym $mod+Shift+i        exec $TERMCMD -e 'htop'
+bindsym $mod+Shift+i        exec --no-startup-id $TERMCMD -e 'htop'
 
 bindsym $mod+j              focus down
 bindsym $mod+Shift+j        move down
@@ -129,7 +140,7 @@ bindsym $mod+Shift+l        move right
 bindsym $mod+Ctrl+l         resize grow width 5 px or 5 ppt
 
 bindsym $mod+m              bar mode toggle
-bindsym $mod+Shift+m        exec $BROWSER "https://mail.google.com/"
+bindsym $mod+Shift+m        exec --no-startup-id $BROWSER "https://mail.google.com/"
 
 # bindsym $mod+n
 # bindsym $mod+Shift+n
@@ -137,21 +148,21 @@ bindsym $mod+Shift+m        exec $BROWSER "https://mail.google.com/"
 # bindsym $mod+o
 # bindsym $mod+Shift+o
 
-# bindsym $mod+p
+bindsym $mod+p              exec --no-startup-id spawn_dropdown dropdownpython
 # bindsym $mod+Shift+p
 
 bindsym $mod+q              split toggle
-bindsym $mod+Shift+q        kill
+bindsym $mod+Shift+q        [con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 
 bindsym $mod+r              mode "$mode_resize"
 bindsym $mod+Shift+r        restart
 
 bindsym $mod+s              layout stacking
-bindsym $mod+Shift+s        exec $BROWSER "https://shoppinglist.google.com"
+bindsym $mod+Shift+s        exec --no-startup-id $BROWSER "https://shoppinglist.google.com"
 bindsym $mod+Ctrl+s         sticky toggle
 
 # bindsym $mod+t
-bindsym $mod+Shift+t        exec $BROWSER "https://translate.google.com"
+bindsym $mod+Shift+t        exec --no-startup-id $BROWSER "https://translate.google.com"
 
 # bindsym $mod+u
 
@@ -168,7 +179,7 @@ bindsym $mod+w              layout tabbed
 bindsym $mod+Ctrl+x         --release exec --no-startup-id xkill
 
 # bindsym $mod+y
-bindsym $mod+Shift+y        exec $BROWSER "https://youtube.com"
+bindsym $mod+Shift+y        exec --no-startup-id $BROWSER "https://youtube.com"
 
 bindsym $mod+z              exec --no-startup-id morc_menu
 # bindsym $mod+Shift+z
@@ -308,7 +319,7 @@ mode "$mode_resize" {
 #---i3bar---#
 bar {
 	i3bar_command i3bar
-	status_command i3status
+	status_command i3blocks
 
 	position top
         height 23
