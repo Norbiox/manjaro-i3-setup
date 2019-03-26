@@ -23,9 +23,12 @@ yay -S \
     sxiv \
     i3blocks \
     xorg-xwininfo \
-    sysstat
+    sysstat \
+    incron
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
 
-
+# incron setup
+echo $USER | sudo tee /etc/incron.allow
+sudo systemctl enable incrond.service

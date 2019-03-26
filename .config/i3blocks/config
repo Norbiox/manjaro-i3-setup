@@ -21,7 +21,7 @@ min_width=🐏 9.9G
 
 [disk]
 label=📂
-interval=5
+interval=10
 min_width=📂 99G
 
 
@@ -33,13 +33,13 @@ min_width=🌡99.9CC
 
 
 [battery]
-interval=5
+interval=15
 min_width=🔋 100% (99:99)
 
 
 [iface]
 label=🌐
-interval=10
+interval=5
 separator=false
 
 
@@ -50,5 +50,5 @@ min_width=🔄999K/999K
 
 
 [datetime]
-interval=1
+interval=5
 min_width=📆 czw 22.05   🕒 03:55

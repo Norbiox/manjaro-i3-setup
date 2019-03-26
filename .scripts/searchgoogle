@@ -4,6 +4,7 @@
 # Without input will open Google.
 # URLs will be directly handed to the browser.
 # Anything else will be search for via Google.
+
 . $HOME/.dmenurc
 dmenu_cmd="dmenu $DMENU_OPTIONS"
 browser=${BROWSER:-google-chrome-stable}
