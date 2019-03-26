@@ -24,7 +24,8 @@ yay -S \
     i3blocks \
     xorg-xwininfo \
     sysstat \
-    incron
+    incron \
+    xbanish-timeout-git
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
@@ -32,3 +33,4 @@ yay -S \
 # incron setup
 echo $USER | sudo tee /etc/incron.allow
 sudo systemctl enable incrond.service
+
