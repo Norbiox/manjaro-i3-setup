@@ -9,8 +9,10 @@ Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'gabrielelana/vim-markdown'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
+set laststatus=2
 let g:lightline = {
     \ 'colorscheme': 'onedark',
     \ }
