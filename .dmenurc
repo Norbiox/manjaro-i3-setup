@@ -17,7 +17,7 @@ DMENU_SB="#61AFEF"
 ## textcolour for selected menu-items
 DMENU_SF="#282C34"
 
-DMENU_HEIGHT=23
+DMENU_HEIGHT=24
 
 ## command for the terminal application to be used:
 TERMINAL_CMD="$TERMINAL -e"

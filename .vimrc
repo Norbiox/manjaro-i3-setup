@@ -12,6 +12,7 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'itchyny/lightline.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 set laststatus=2

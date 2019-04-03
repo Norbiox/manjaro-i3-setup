@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/norbert/.gtkrc-2.0.mine"
-gtk-theme-name="Arc-Dark"
-gtk-icon-theme-name="hicolor"
+gtk-theme-name="onedark"
+gtk-icon-theme-name="Papirus"
 gtk-font-name="Fira Sans Medium 10"
 gtk-cursor-theme-name="xcursor-breeze"
 gtk-cursor-theme-size=0

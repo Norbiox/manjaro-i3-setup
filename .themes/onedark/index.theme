@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=OneDark
+Comment=A flat theme based on Arc-Darker and Atom editor.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=OneDark
+MetacityTheme=OneDark
+IconTheme=gnome
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

@@ -147,3 +147,20 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 
 # remove duplicates from history
 export HISTCONTROL=ignoreboth:erasedups
+
+# prompting for password
+export SUDO_ASKPASS=.scripts/askpass
+
+
+# Users functions
+v() {
+    if [[ -d "./venv" && -z "$VIRTUAL_ENV" ]]; then
+        source ./venv/bin/activate
+        echo "Virtual environment activated. Python version: `python --version | cut -d' ' -f2`"
+    elif [[ -n "$VIRTUAL_ENV" ]]; then
+        deactivate
+        echo "Virtual environment deactivated."
+    else
+        echo "Virtual environment has not beed detected in current directory."
+    fi
+}
