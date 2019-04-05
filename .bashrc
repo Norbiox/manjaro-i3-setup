@@ -164,3 +164,6 @@ v() {
         echo "Virtual environment has not beed detected in current directory."
     fi
 }
+
+# Git autocompletion
+source ~/git-completion.bash
