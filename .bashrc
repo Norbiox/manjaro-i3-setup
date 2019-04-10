@@ -42,9 +42,9 @@ function parse_git_dirty {
 function parse_git_branch {
     string=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\(\1$(parse_git_dirty)\)/"`
     if [[ -n `parse_git_dirty` ]]; then
-            echo -ne "\e[0;31m$string"
+            echo -ne "\[\033[0;31m\]$string"
     else
-            echo -ne "\e[0;32m$string"
+            echo -ne "\[\033[0;32m\]$string"
     fi
 }
 
@@ -85,14 +85,25 @@ if ${use_color} ; then
 		fi
 	fi
 
-        PS1='\[\e[01;34m\][\u@\h\[\e[01;37m\] \w\[\e[01;34m\]]$(parse_git_branch)\e[0m\$ '
+	if [[ ${EUID} == 0 ]] ; then
+            PS1="\[\033[01;34m\][\h\[\033[01;37m\] \W\[\033[01;34m\]]"
+	else
+            PS1="\[\033[01;34m\][\u@\h\[\033[01;37m\] \W\[\033[01;34m\]]"
+	fi
+
+        PS1="${PS1}\[\033[00m\]\$ "
 
 	alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
 else
-    PS1='\u@\h \w $(parse_git_branch)\$ '
+	if [[ ${EUID} == 0 ]] ; then
+		# show root@ when we don't have colors
+		PS1='\u@\h \W \$ '
+	else
+		PS1='\u@\h \w \$ '
+	fi
 fi
 
 unset use_color safe_term match_lhs sh
@@ -105,7 +116,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 
 # User aliases
-alias upd="sudo pacman -Syyu && sudo yay -Syu"
+alias upd="sudo pacman -Syyu && yay"
 
 xhost +local:root > /dev/null 2>&1
 
