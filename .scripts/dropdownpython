@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Python3" && python3 -q
+echo "Python3" && ipython --no-banner
