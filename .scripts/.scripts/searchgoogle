@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Inspired by Luke Smith's 'ducksearch' script.
+# Without input will open Google.
+# URLs will be directly handed to the browser.
+# Anything else will be search for via Google.
+
+. $HOME/.dmenurc
+dmenu_cmd="dmenu $DMENU_OPTIONS"
+browser=${BROWSER:-google-chrome-stable}
+
+pgrep -x $dmenu_cmd && exit
+
+choice=$(echo "" | $dmenu_cmd -i -p "Search Google:") || exit 1
+
+if [ "$choice" = ""  ]; then
+    $browser "https://google.com"
+else
+    # Detect if url
+    if [[ "$choice" =~ ^(http:\/\/|https:\/\/)?[a-zA-Z0-9]+\.[a-zA-Z]+(/)?.*$ ]]; then
+        $browser "$choice"
+    else
+        $browser "https://google.com/search?q=$choice"
+    fi
+fi

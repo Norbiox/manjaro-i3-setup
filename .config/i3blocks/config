@@ -1,8 +1,15 @@
-align="center"
+align="left"
 separator=" "
 command=~/.scripts/i3blocks/$BLOCK_NAME
 separator_block_width=20
-markup=none
+markup=pango
+
+
+[keyindicator]
+KEY=CAPS
+interval=once
+signal=11
+HIDE_WHEN_OFF=1
 
 
 [cpu_usage]

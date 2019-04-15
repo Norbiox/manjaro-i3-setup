@@ -1,0 +1,9 @@
+#!/bin/bash
+
+time=$1; shift
+given_message="$*"
+message=${given_message:-"Time's up!"}
+
+(sleep $time && notify-send "$message") &
+notify-send "Timer set for $time"
+

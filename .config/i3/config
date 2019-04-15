@@ -33,7 +33,7 @@ font xft:Fira Sans Medium 11
 set $mod Mod4
 floating_modifier $mod
 
-new_window pixel 1
+new_window pixel 2
 new_float normal
 hide_edge_borders none
 
@@ -44,6 +44,10 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #bindsym $mod+Ctrl+m exec pavucontrol
 
 # workspace_auto_back_and_forth yes
+
+# caps_lock and num_lock indication
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 
 #---Dropdown Windows---#
@@ -337,7 +341,7 @@ bar {
         separator  $term_color8
 
 #                           border              background          text
-        focused_workspace   $term_foreground    $term_color4        $term_background
+        focused_workspace   $term_color4        $term_color4        $term_background
         active_workspace    $term_color8        $term_color8        $term_foreground
         inactive_workspace  $term_color8        $term_color8        $term_foreground
         binding_mode        $term_color4        $term_background    $term_foreground

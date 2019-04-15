@@ -21,7 +21,7 @@ yay -S \
     python-virtualenv \
     urxvt-resize-font-git \
     sxiv \
-    i3blocks \
+    i3blocks-git \
     xorg-xwininfo \
     sysstat \
     incron \
