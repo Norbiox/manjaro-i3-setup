@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -n `pstree | grep compton` ]; then
+    compton -b
+else
+    killall compton
+fi

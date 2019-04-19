@@ -77,9 +77,6 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id "xbanish"
 
 #---Basic Shortcuts---#
-bindsym $mod+End            mode "$mode_system"
-
-bindsym $mod+Escape         exec --no-startup-id blurlock
 
 bindsym $mod+minus          scratchpad show
 bindsym $mod+Shift+minus    move scratchpad
@@ -102,8 +99,24 @@ bindsym $mod+grave          exec --no-startup-id get-emoji
 bindsym $mod+colon          exec --no-startup-id dmenu_recency
 
 
-#---F[n] Shortcuts---#
+#---Upper Bar Shortcuts---#
+bindsym $mod+Escape         exec --no-startup-id blurlock
+# bindsym $mod+F1             
 bindsym $mod+F2             restart
+bindsym $mod+F3             exec --no-startup-id switchcompton
+# bindsym $mod+F4
+# bindsym $mod+F5
+# bindsym $mod+F6
+# bindsym $mod+F7
+# bindsym $mod+F8
+bindsym $mod+F9             exec --no-startup-id dmenumount
+bindsym $mod+F10            exec --no-startup-id dmenuumount
+# bindsym $mod+F11
+# bindsym $mod+F12
+# bindsym $mod+Home
+bindsym $mod+End            mode "$mode_system"
+bindsym $mod+Insert         exec --no-startup-id secretcommand
+# bindsym $mod+Delete
 
 
 #---Letter Shortcuts---#
