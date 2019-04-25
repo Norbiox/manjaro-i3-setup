@@ -25,7 +25,8 @@ yay -S \
     xorg-xwininfo \
     sysstat \
     incron \
-    xbanish-timeout-git
+    xbanish-timeout-git \
+    vifm
 
 
 # yay -S pulseaudio pulseaudio-alsa pulsemixer
