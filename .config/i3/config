@@ -363,7 +363,7 @@ bar {
 }
 
 # class                   border        backgr.         text    indic.   child_border
-  client.focused          $term_color8  $term_color8    #80FFF9 #FDF6E3
+  client.focused          $term_color4  $term_color4    #80FFF9 #FDF6E3
   client.focused_inactive $term_color0  $term_color0    #1ABC9C #454948
   client.unfocused        $term_color0  $term_color0    #1ABC9C #454948
   client.urgent           $term_color9  $term_color9    #1ABC9C #268BD2
