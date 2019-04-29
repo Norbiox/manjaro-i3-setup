@@ -1,0 +1,6 @@
+#!/bin/sh
+sessions=$(tmux list-sessions)
+if [[ $sessions == *"dropdownterminal"* ]]; then
+    tmux kill-session -t dropdownterminal
+fi
+tmux new -s dropdownterminal

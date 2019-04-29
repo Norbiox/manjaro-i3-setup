@@ -184,6 +184,7 @@ bindsym $mod+s              layout stacking
 bindsym $mod+Ctrl+s         sticky toggle
 
 # bindsym $mod+t
+bindsym $mod+t              exec --no-startup-id spawn_dropdown dropdownterminal
 bindsym $mod+Shift+t        exec --no-startup-id webapp translate
 
 # bindsym $mod+u
