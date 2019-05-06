@@ -5,6 +5,10 @@ separator_block_width=20
 markup=pango
 
 
+[weather]
+interval=600
+
+
 [keyindicator]
 KEY=CAPS
 interval=once
@@ -20,7 +24,7 @@ min_width=💻 100.0%
 
 
 [memory]
-label=🐏
+label=🧠
 separator=false
 interval=5
 min_width=🐏 9.9G
@@ -45,15 +49,7 @@ min_width=🔋 100% (99:99)
 
 
 [iface]
-label=🌐
 interval=5
-separator=false
-
-
-[bandwidth]
-label=🔄
-interval=1
-min_width=🔄999K/999K
 
 
 [datetime]

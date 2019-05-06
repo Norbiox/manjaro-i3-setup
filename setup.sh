@@ -11,16 +11,17 @@ sudo pacman -R \
     epdfview
 
 yay -S \
-    google-chrome \
-    zathura zathura-pdf-poppler zathura-cb zathura-djvu zathura-ps \
     arc-gtk-theme \
     nerd-fonts-fira-code \
     ttf-fira-sans \
     ttf-symbola \
+    ttf-emojione \
+    google-chrome \
+    zathura zathura-pdf-poppler zathura-cb zathura-djvu zathura-ps \ # pdf viewer
     python-pip \
     python-virtualenv \
     urxvt-resize-font-git \
-    sxiv \
+    sxiv \ # image viewer
     i3blocks-git \
     xorg-xwininfo \
     sysstat \
