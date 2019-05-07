@@ -61,4 +61,4 @@ esac
 [ ! -n "${wifiicon+var}" ] && wifiicon=$(grep "^\s*w" /proc/net/wireless | awk '{ print "📶", int($3 * 100 / 70) "%" }')
 
 
-echo "$wifiicon  IP: $IPADDR" # full text
+echo "$wifiicon  $IPADDR" # full text

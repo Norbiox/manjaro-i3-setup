@@ -1,4 +1,9 @@
 #!/bin/bash
+
+case $BLOCK_BUTTON in
+    3) googleapp calendar > /dev/null ;;
+esac
+
 calendar_icon=📆
 clock_icon=🕒
 echo "$calendar_icon `date "+%a %d.%m"`   $clock_icon `date "+%H:%M"`"
