@@ -116,7 +116,8 @@ alias np='nano -w PKGBUILD'
 alias more=less
 
 # User aliases
-alias upd="sudo pacman -Syyu && yay"
+alias upd="yay -Syu"
+alias keys="cat .config/i3/config | grep '^bindsym \$mod+' | sed 's/^bindsym \$mod+//'"
 
 xhost +local:root > /dev/null 2>&1
 
@@ -165,10 +166,6 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 
 # remove duplicates from history
 export HISTCONTROL=ignoreboth:erasedups
-
-# prompting for password
-export SUDO_ASKPASS=.scripts/askpass
-
 
 # Users functions
 v() {
