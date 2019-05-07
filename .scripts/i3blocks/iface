@@ -56,9 +56,14 @@ case $BLOCK_BUTTON in
 esac
 
 #------------------------------------------------------------------------
+
+# get emoji
 [ "$(cat /sys/class/net/w*/operstate)" = 'down' ] && wifiicon="📡"
 
 [ ! -n "${wifiicon+var}" ] && wifiicon=$(grep "^\s*w" /proc/net/wireless | awk '{ print "📶", int($3 * 100 / 70) "%" }')
 
+#------------------------------------------------------------------------
 
-echo "$wifiicon  $IPADDR" # full text
+SSID=`iwgetid -r`
+
+echo "$wifiicon $SSID $IPADDR" # full text
