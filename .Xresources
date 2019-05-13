@@ -62,14 +62,21 @@ Xcursor.size:                     0
 
 
 ! #---URxvt---#
-URxvt.perl-ext-common: default,matcher,keyboard-select,resize-font
+URxvt*lineSpace:                    3
 
-URxvt.url-launcher:             /usr/bin/xdg-open
-URxvt.matcher.button:           1
+URxvt.perl-ext-common: default,keyboard-select,resize-font
+URxvt*perl-ext:                     url-select
 
-URxvt.keysym.M-Escape:          perl:keyboard-select:activate
-URxvt.keysym.M-slash:           perl:keyboard-select:search
+!URxvt.url-launcher:                 /usr/bin/xdg-open
+!URxvt.matcher.button:               1
+
+URxvt.keysym.M-Escape:              perl:keyboard-select:activate
+URxvt.keysym.M-slash:               perl:keyboard-select:search
 URxvt.keyboard-select.clipboard:    true
+
+URxvt.keysym.M-u:                   perl:url-select:select_next
+URxvt.url-select.launcher:          /usr/bin/xdg-open
+URxvt.url-select.underline:         true
 
 !URxvt.keysym.M-c:               perl:clipboard:copy
 !URxvt.keysym.M-v:               perl:clipboard:paste
@@ -183,8 +190,6 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! URxvt*externalBorder:             number
 ! URxvt*internalBorder:             number
 ! URxvt*borderLess:                 true
-! URxvt*lineSpace:                  number
-! URxvt*letterSpace:                number
 ! URxvt*skipBuiltinGlyphs:          boolean
 ! URxvt*pointerBlankDelay:          number
 ! URxvt*backspacekey:               string
