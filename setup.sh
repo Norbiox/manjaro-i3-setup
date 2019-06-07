@@ -11,6 +11,7 @@ sudo pacman -R \
     epdfview
 
 yay -S \
+    bash-completion \
     arc-gtk-theme \
     nerd-fonts-fira-code \
     ttf-fira-sans \

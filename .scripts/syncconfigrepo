@@ -1,0 +1,49 @@
+#!/bin/python
+import argparse
+import difflib
+import os
+import sys
+
+
+BASE_DIR = f"/home/{os.environ['USER']}"
+SETUP_REPO_DIRECTORY = f"{BASE_DIR}/manjaro-i3-setup/"
+SETUP_REPO_IGNORED_LIST_FILE = os.path.join(SETUP_REPO_DIRECTORY, '.syncignored')
+if not os.path.exists(SETUP_REPO_IGNORED_LIST_FILE):
+    with open(SETUP_REPO_IGNORED_LIST_FILE, 'w+') as ignorefile:
+        for filename in ['.git', 'LICENSE', 'README.md', 'setup.sh', 'programs.txt']:
+            ignorefile.write(filename + '\n')
+IGNORED_FILES = list(open(SETUP_REPO_IGNORED_LIST_FILE).readlines())
+
+
+def get_repo_file_origin(repo_file) -> str or None:
+    origin_path = BASE_DIR + repo_file.lstrip(SETUP_REPO_DIRECTORY)
+    if os.path.exists(origin_path):
+        return origin_path
+    return None
+
+
+def get_repo_files() -> list:
+    files_list = []
+    for root, subdirs, files in os.walk(SETUP_REPO_DIRECTORY):
+        files_list += [os.path.join(root, file) for file in files]
+    return list(filter(lambda f: f not in IGNORED_FILES, files_list))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Sync config files with config repo directory"
+    )
+    parser.add_argument(
+        '-r', '--reset', action='store_true',
+        help="replace config files with those saved in repository"
+    )
+    parser.add_argument(
+        '-i', '--ignore_new', action='store_true',
+        help="ignore newly created files 
+    if not os.path.exists(SETUP_REPO_DIRECTORY):
+        print(f"{SETUP_REPO_DIRECTORY} not found in filesystem")
+        sys.exit(1)
+    files = get_repo_files_with_origins()
+    print(f"{len(files)} files found in {SETUP_REPO_DIRECTORY}")
+    
+

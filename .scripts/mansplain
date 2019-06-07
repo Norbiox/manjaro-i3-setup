@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. $HOME/.dmenurc
+dmenu_cmd="dmenu $DMENU_OPTIONS"
+
+package=`man -k . | $dmenu_cmd -l 10 | awk '{print $1}'`
+if [[ -n $package ]]; then
+    man -Tpdf $package | zathura --page=1 --fork -
+fi

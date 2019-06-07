@@ -1,0 +1,18 @@
+bash-completion
+arc-gtk-theme
+nerd-fonts-fira-code
+ttf-fira-sans
+ttf-symbola
+ttf-emojione
+google-chrome
+zathura zathura-pdf-poppler zathura-cb zathura-djvu zathura-ps
+python-pip
+python-virtualenv
+urxvt-resize-font-git
+sxiv
+i3blocks-git
+xorg-xwininfo
+sysstat
+incron
+xbanish-timeout-git
+vifm

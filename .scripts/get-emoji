@@ -3,9 +3,12 @@
 # Give dmenu list of all unicode characters to copy.
 # Shows the selected character in dunst if running.
 
+. $HOME/.dmenurc
+dmenu_cmd="dmenu $DMENU_OPTIONS"
+
 xclip -h > /dev/null || exit
 
-chosen=$(grep -v "#" ~/.config/emoji | dmenu -i -l 20)
+chosen=$(grep -v "#" ~/.config/emoji | $dmenu_cmd -i -l 20)
 
 [ "$chosen" != "" ] || exit
 

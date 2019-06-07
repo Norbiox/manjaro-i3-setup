@@ -37,5 +37,9 @@ set softtabstop=4
 set undolevels=1000
 set colorcolumn=80
 
-vnoremap <C-c> "+y
-map <C-v> "+P
+map @ :noh<CR>
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>

@@ -1,8 +1,33 @@
 #
 # ~/.bashrc
 #
-
 [[ $- != *i* ]] && return
+
+# better yaourt colors
+export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
+
+export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=1000
+export HISTFILESIZE=1000
+# remove duplicates from history
+export HISTCONTROL=ignoreboth:erasedups
+
+# User functions
+v() {
+    if [[ -d "./venv" && -z "$VIRTUAL_ENV" ]]; then
+        source ./venv/bin/activate
+        echo "Virtual environment activated. Python version: `python --version | cut -d' ' -f2`"
+    elif [[ -n "$VIRTUAL_ENV" ]]; then
+        deactivate
+        echo "Virtual environment deactivated."
+    else
+        echo "Virtual environment has not beed detected in current directory."
+    fi
+}
+
+function cdls {
+    builtin cd "$@" && ls -F
+    }
 
 colors() {
 	local fgc bgc vals seq0
@@ -109,7 +134,6 @@ fi
 unset use_color safe_term match_lhs sh
 
 # Aliases
-alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
@@ -118,6 +142,9 @@ alias more=less
 # User aliases
 alias upd="yay -Syu"
 alias keys="cat .config/i3/config | grep '^bindsym \$mod+' | sed 's/^bindsym \$mod+//'"
+alias h="history"
+alias hg="history | grep"
+alias cd="cdls"
 
 xhost +local:root > /dev/null 2>&1
 
@@ -160,25 +187,3 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-# better yaourt colors
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
-# remove duplicates from history
-export HISTCONTROL=ignoreboth:erasedups
-
-# Users functions
-v() {
-    if [[ -d "./venv" && -z "$VIRTUAL_ENV" ]]; then
-        source ./venv/bin/activate
-        echo "Virtual environment activated. Python version: `python --version | cut -d' ' -f2`"
-    elif [[ -n "$VIRTUAL_ENV" ]]; then
-        deactivate
-        echo "Virtual environment deactivated."
-    else
-        echo "Virtual environment has not beed detected in current directory."
-    fi
-}
-
-# Git autocompletion
-source ~/git-completion.bash

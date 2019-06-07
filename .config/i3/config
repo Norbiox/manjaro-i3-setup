@@ -96,6 +96,7 @@ bindsym $mod+Shift+space    floating toggle
 bindsym $mod+grave          exec --no-startup-id get-emoji
 
 bindsym $mod+colon          exec --no-startup-id dmenu_recency
+bindsym $mod+Shift+colon    exec --no-startup-id spawn_dropdown dropdownterminal
 
 
 #---Upper Bar Shortcuts---#
@@ -184,7 +185,7 @@ bindsym $mod+s              layout stacking
 bindsym $mod+Ctrl+s         sticky toggle
 
 # bindsym $mod+t
-bindsym $mod+t              exec --no-startup-id spawn_dropdown dropdownterminal
+# bindsym $mod+t              exec --no-startup-id spawn_dropdown dropdownterminal
 bindsym $mod+Shift+t        exec --no-startup-id webapp translate
 
 # bindsym $mod+u
@@ -194,7 +195,8 @@ bindsym $mod+Shift+t        exec --no-startup-id webapp translate
 # bindsym $mod+Shift+v
 
 bindsym $mod+w              layout tabbed
-# bindsym $mod+Shift+w
+bindsym $mod+Shift+w        exec --no-startup-id $TERMCMD -hold -e cat "$HOME/.local/share/weatherreport";;
+
 
 # bindsym $mod+x
 # bindsym $mod+Shift+x
