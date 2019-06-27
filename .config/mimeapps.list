@@ -17,6 +17,9 @@ x-scheme-handler/mailto=google-chrome.desktop
 message/rfc822=userapp-Thunderbird.desktop
 application/pdf=epdfview.desktop
 application/x-bittorrent=deluge.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+x-scheme-handler/arc-file=advanced-rest-client.desktop
+x-scheme-handler/discord-472158403830218762=discord-472158403830218762.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Pale Moon.desktop;

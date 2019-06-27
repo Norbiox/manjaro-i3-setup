@@ -1,4 +1,0 @@
-#!/bin/bash
-calendar_icon=📆
-clock_icon=🕒
-echo "$calendar_icon `date "+%a %d.%m"`   $clock_icon `date "+%H:%M"`"

@@ -1,4 +1,4 @@
-align="left"
+align="center"
 separator=" "
 command=~/.scripts/i3blocks/$BLOCK_NAME
 separator_block_width=20

@@ -1,0 +1,385 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/norbert/
+	..
+1556007805
+'b
+	/home/norbert/bin/
+	..
+1556007805
+'h
+	/home/norbert/
+	..
+1556007805
+'z
+	/home/norbert/.config/vifm
+	..
+1556007805
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/
+	etc
+3
+d/etc
+	ImageMagick-7
+1
+d/etc/ImageMagick-7
+	colors.xml
+1
+d/etc
+	ImageMagick-7
+1
+d/
+	etc
+3
+d/etc
+	ImageMagick-7
+1
+d/home/norbert
+	manjaro-i3-setup
+10
+d/home/norbert/manjaro-i3-setup
+	..
+0
+d/home/norbert
+	Pictures
+5
+d/home/norbert/Pictures
+	..
+0
+d/home/norbert
+	Pictures
+5
+d/home/norbert/Pictures
+	daniel-leone-197357-unsplash.jpg
+3
+d/home/norbert
+	Music
+4
+d/home/norbert/Music
+	..
+0
+d/home/norbert
+	notes.md
+26
+d/home
+	norbert
+1
+d/home/norbert
+	rpi
+17
+d/home/norbert/rpi
+	ssh
+20
+d/home/norbert
+	rpi
+17
+d/home/norbert/rpi
+	boot
+2
+d/home/norbert/rpi/boot
+	..
+0
+d/home/norbert/rpi
+	bin
+1
+d/home/norbert/rpi/bin
+	..
+0
+d/home/norbert/rpi
+	boot
+2
+d/home/norbert/rpi/boot
+	..
+0
+d/home/norbert/rpi
+	ssh
+20
+d/home/norbert
+	rpi
+17
+d/home/norbert/rpi
+	..
+0
+d/home/norbert
+	rpi
+17
+d/home
+	norbert
+1
+d/
+	usr
+17
+d/usr
+	share
+8
+d/usr/share
+	bash-completion
+20
+d/usr/share/bash-completion
+	completions
+1
+d/usr/share/bash-completion/completions
+	..
+0
+d/usr/share/bash-completion
+	completions
+1
+d/usr/share/bash-completion/completions
+	..
+0
+d/usr/share/bash-completion
+	helpers
+2
+d/usr/share/bash-completion/helpers
+	gst
+1
+d/usr/share/bash-completion
+	completions
+1
+d/usr/share/bash-completion/completions
+	aclocal
+4
+d/usr/share/bash-completion
+	completions
+1
+d/usr/share
+	bash-completion
+20
+d/home/norbert/praca-magisterska
+	venv
+8
+d/home/norbert/praca-magisterska/pendrive/rl
+	rl_books
+7
+d/home/norbert/praca-magisterska/pendrive/rl/rl_books
+	1951_Robbins_Monro__A stochastic approximation method.pdf
+1
+d/home/norbert/praca-magisterska/pendrive/rl
+	3. Algorytmy uczenia się ze wzmocnieniem w środowiskach komórkowych.pdf
+8
+d/home/norbert
+	rpi
+17
+d/home/norbert/praca-magisterska
+	pendrive
+4
+d/home/norbert/praca-magisterska/pendrive
+	rl
+3
+d/home/norbert/praca-magisterska/pendrive/rl
+	..
+0
+d/home/norbert/praca-magisterska/pendrive
+	rl
+4
+d/home/norbert/praca-magisterska
+	pendrive
+2
+d/home/norbert/praca-magisterska/pendrive
+	rl
+4
+d/home/norbert/praca-magisterska/pendrive/rl
+	rl
+5
+d/home/norbert/praca-magisterska/pendrive
+	FuzzyQ-learning
+3
+d/home/norbert/praca-magisterska/pendrive/FuzzyQ-learning
+	mountain_car
+1
+d/home/norbert/praca-magisterska/pendrive/FuzzyQ-learning/mountain_car
+	mf_t.m
+6
+d/home/norbert/praca-magisterska/pendrive
+	..
+0
+d/home/norbert/praca-magisterska
+	pendrive
+2
+d/home/norbert
+	praca-magisterska
+13
+d/home
+	norbert
+1
+d/
+	mnt
+8
+d/mnt
+	pendrive
+1
+d/mnt/pendrive
+	DCIM
+3
+d/mnt/pendrive/DCIM
+	Camera
+1
+d/mnt/pendrive/DCIM/Camera
+	20160416_103254.jpg
+4
+d/mnt/pendrive
+	Download
+4
+d/mnt/pendrive/Download
+	..
+0
+d/mnt/pendrive
+	Images
+5
+d/mnt/pendrive/Images
+	..
+0
+d/mnt/pendrive
+	Pictures
+11
+d/mnt/pendrive/Pictures
+	..
+0
+d/mnt/pendrive
+	bluetooth
+14
+d/mnt/pendrive/bluetooth
+	..
+0
+d/mnt/pendrive
+	bluetooth
+14
+d/mnt/pendrive/bluetooth
+	images
+1
+d/mnt/pendrive/bluetooth/images
+	..
+0
+d/mnt/pendrive/bluetooth
+	images
+1
+d/mnt/pendrive
+	..
+0
+d/mnt
+	pendrive
+1
+d/mnt/pendrive
+	..
+0
+d/mnt
+	pendrive
+1
+d/mnt/pendrive
+	..
+0
+d/mnt/pendrive2
+	..
+0
+d/mnt
+	pendrive
+1
+d/mnt/pendrive
+	..
+0
+d/mnt
+	pendrive2
+2
+d/mnt/pendrive2
+	..
+0
+d/mnt
+	..
+0
+d/
+	lib
+5
+d/home/norbert/praca-magisterska/pendrive
+	FuzzyQ-learning
+3
+d/home/norbert/praca-magisterska/pendrive/FuzzyQ-learning
+	mountain_car
+1
+d/home/norbert/praca-magisterska/pendrive/FuzzyQ-learning/mountain_car
+	fqlearn_lambda.m
+3
+d/home/norbert/praca-magisterska
+	pendrive
+2
+d/home/norbert/praca-magisterska/pendrive
+	rl
+4
+d/home/norbert/praca-magisterska/pendrive/rl
+	algorithms.png
+13
+d/home/norbert
+	praca-magisterska
+14
+d/home/norbert/praca-magisterska
+	pendrive
+3
+d/home/norbert
+	ballbeam_cmacahc.png
+23
+d
+
+# Right window history (oldest to newest):
+D/home/norbert
+	rpi2
+18
+D/home/norbert/rpi2
+	..
+0
+D/home/norbert
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:cd ~
+:ls
+:touch ssh
+:vim wpa_supplicant.conf
+:touch wpa_supplicant.conf
+:sxiv
+::q
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/norbert/rpi/.vifm-Trash-1000/000_ssh
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/norbert/rpi/.vifm-Trash-1000/000_nohup.out
+	/home/norbert/rpi/nohup.out
+t/home/norbert/rpi/.vifm-Trash-1000/000_wpa_supplicant.conf
+	/home/norbert/rpi/wpa_supplicant.conf
+t/home/norbert/rpi/.vifm-Trash-1000/000_ssh
+	/home/norbert/rpi/ssh
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0

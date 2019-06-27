@@ -12,23 +12,6 @@ export HISTFILESIZE=1000
 # remove duplicates from history
 export HISTCONTROL=ignoreboth:erasedups
 
-# User functions
-v() {
-    if [[ -d "./venv" && -z "$VIRTUAL_ENV" ]]; then
-        source ./venv/bin/activate
-        echo "Virtual environment activated. Python version: `python --version | cut -d' ' -f2`"
-    elif [[ -n "$VIRTUAL_ENV" ]]; then
-        deactivate
-        echo "Virtual environment deactivated."
-    else
-        echo "Virtual environment has not beed detected in current directory."
-    fi
-}
-
-function cdls {
-    builtin cd "$@" && ls -F
-    }
-
 colors() {
 	local fgc bgc vals seq0
 
@@ -132,6 +115,23 @@ else
 fi
 
 unset use_color safe_term match_lhs sh
+
+# User functions
+v() {
+    if [[ -d "./venv" && -z "$VIRTUAL_ENV" ]]; then
+        source ./venv/bin/activate
+        echo "Virtual environment activated. Python version: `python --version | cut -d' ' -f2`"
+    elif [[ -n "$VIRTUAL_ENV" ]]; then
+        deactivate
+        echo "Virtual environment deactivated."
+    else
+        echo "Virtual environment has not beed detected in current directory."
+    fi
+}
+
+function cdls {
+    builtin cd "$@" && ls
+    }
 
 # Aliases
 alias df='df -h'                          # human-readable sizes

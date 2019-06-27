@@ -1,0 +1,63 @@
+[File/Save As]
+Forced Quality=75
+
+[General Settings]
+First Time=false
+Last Document Size=750,1000
+Open Images in the Same Window=false
+Resize Scale - Last Keep Aspect=true
+Resize Scale - ScaleType=0
+
+[KFileDialog Settings]
+Height 1080=540
+Height 900=480
+Recent Files[$e]=file:$HOME/praca-magisterska/book/figures/grid2436_Q_alpha_comparison.png,file:$HOME/Downloads/62185878_617025998706397_7861974215564460032_n.jpg,file:$HOME/Pictures/IMG_20181224_190812.jpg
+Recent URLs[$e]=file:$HOME/praca-magisterska/book/figures/
+Width 1600=800
+Width 1920=960
+
+[MainWindow]
+Height 1080=1056
+Height 900=876
+State=AAAA/wAAAAD9AAAAAQAAAAMAAAXoAAAAaPwBAAAAAfsAAAASAEMAbwBsAG8AcgAgAEIAbwB4AQAAAFgAAAXoAAACCwD///8AAAXoAAACmwAAAAQAAAAEAAAAAQAAAAL8AAAAAgAAAAAAAAABAAAAEABUAG8AbwBsACAAQgBvAHgDAAAAAP////8AAAAAAAAAAAAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAABYAdABlAHgAdABUAG8AbwBsAEIAYQByAAAAAuz/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1600=1600
+Width 1920=1920
+
+[MainWindow][Toolbar Tool Box]
+ToolButtonStyle=IconOnly
+
+[MimeType Properties Version 1.2-3]
+Configurable Color Depth=image/png,image/bmp,image/x-pcx,image/x-rgb,image/x-xpixmap
+Configurable Quality Setting=image/jp2,image/jpeg,image/x-webp
+Maximum Color Depth=image/x-eps:32,image/x-portable-bitmap:1,image/x-portable-graymap:8,image/x-xbitmap:1
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/62185878_617025998706397_7861974215564460032_n.jpg
+File2[$e]=$HOME/Pictures/2019-06-24-105825_1920x1980_scrot.png
+File3[$e]=$HOME/praca-magisterska/book/figures/grid2436_Q_alpha_comparison.png
+File4[$e]=$HOME/Pictures/2019-06-25-084607_1920x1980_scrot.png
+Name1[$e]=62185878_617025998706397_7861974215564460032_n.jpg
+Name2[$e]=2019-06-24-105825_1920x1980_scrot.png
+Name3[$e]=grid2436_Q_alpha_comparison.png
+Name4[$e]=2019-06-25-084607_1920x1980_scrot.png
+
+[Tool Settings]
+Last Used Tool=1
+Tool Widget Brush Col=0
+Tool Widget Brush Row=0
+Tool Widget Eraser Size Col=0
+Tool Widget Eraser Size Row=1
+Tool Widget Fill Style Col=0
+Tool Widget Fill Style Row=0
+Tool Widget Line Width Col=0
+Tool Widget Line Width Row=0
+Tool Widget Opaque/Transparent Col=0
+Tool Widget Opaque/Transparent Row=0
+Tool Widget Spraycan Size Col=0
+Tool Widget Spraycan Size Row=0
+
+[Undo/Redo Settings]
+Max Limit=500
+Max Limit Size Limit=16777216
+Min Limit=10

@@ -104,8 +104,8 @@ bindsym $mod+Escape         exec --no-startup-id blurlock
 bindsym $mod+F1             exec --no-startup-id mansplain
 bindsym $mod+F2             restart
 bindsym $mod+F3             exec --no-startup-id switchcompton
-# bindsym $mod+F4
-# bindsym $mod+F5
+bindsym $mod+F4             exec --no-startup-id single.sh
+bindsym $mod+F5             exec --no-startup-id oneabove.sh
 # bindsym $mod+F6
 # bindsym $mod+F7
 # bindsym $mod+F8
@@ -348,6 +348,7 @@ bar {
 	position top
         height 24
 	strip_workspace_numbers yes
+        tray_output primary
 
     colors {
         background $term_background
