@@ -95,8 +95,8 @@ bindsym $mod+Shift+space    floating toggle
 
 bindsym $mod+grave          exec --no-startup-id get-emoji
 
-bindsym $mod+colon          exec --no-startup-id dmenu_recency
-bindsym $mod+Shift+colon    exec --no-startup-id spawn_dropdown dropdownterminal
+bindsym $mod+colon          exec --no-startup-id spawn_dropdown dropdownterminal
+bindsym $mod+Shift+colon    exec --no-startup-id dmenu_recency
 
 
 #---Upper Bar Shortcuts---#
@@ -145,6 +145,7 @@ bindsym $mod+Ctrl+g         mode "$mode_gaps"
 bindsym $mod+h              focus left
 bindsym $mod+Shift+h        move left
 bindsym $mod+Ctrl+h         resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+Shift+h   move workspace to output left
 
 # bindsym $mod+i
 bindsym $mod+Shift+i        exec --no-startup-id $TERMCMD -e 'htop'
@@ -152,14 +153,19 @@ bindsym $mod+Shift+i        exec --no-startup-id $TERMCMD -e 'htop'
 bindsym $mod+j              focus down
 bindsym $mod+Shift+j        move down
 bindsym $mod+Ctrl+j         resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+Shift+j   move workspace to output down
 
 bindsym $mod+k              focus up
 bindsym $mod+Shift+k        move up
 bindsym $mod+Ctrl+k         resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+Shift+k   move workspace to output up
+
 
 bindsym $mod+l              focus right
 bindsym $mod+Shift+l        move right
 bindsym $mod+Ctrl+l         resize grow width 5 px or 5 ppt
+bindsym $mod+Ctrl+Shift+l   move workspace to output right
+
 
 bindsym $mod+m              bar mode toggle
 bindsym $mod+Shift+m        exec --no-startup-id webapp messenger
