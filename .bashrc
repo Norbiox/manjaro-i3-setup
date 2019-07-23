@@ -44,16 +44,11 @@ colors() {
 
 # Git status function
 function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
+ [[ -n "$(git status -s 2> /dev/null)" ]] && echo -e '\033[31m'
 }
 
-function parse_git_branch {
-    string=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\(\1$(parse_git_dirty)\)/"`
-    if [[ -n `parse_git_dirty` ]]; then
-            echo -ne "\[\033[0;31m\]$string"
-    else
-            echo -ne "\[\033[0;32m\]$string"
-    fi
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(parse_git_dirty)(\1)/"
 }
 
 
@@ -94,12 +89,10 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-            PS1="\[\033[01;34m\][\h\[\033[01;37m\] \W\[\033[01;34m\]]"
+            PS1="\[\e[1;34m\][\h\[\e[m\] \[\e[1;37m\]\W\[\e[m\][\e[1;34m\]]\[\e[m\]"
 	else
-            PS1="\[\033[01;34m\][\u@\h\[\033[01;37m\] \W\[\033[01;34m\]]"
+            PS1="\[\e[1;34m\][\u@\h\[\e[m\] \[\e[1;37m\]\W\[\e[m\]\[\e[1;34m\]]\[\e[m\]\[\e[32m\]\$(parse_git_branch)\[\e[00m\]\$ "
 	fi
-
-        PS1="${PS1}\[\033[00m\]\$ "
 
 	alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
@@ -145,6 +138,18 @@ alias keys="cat .config/i3/config | grep '^bindsym \$mod+' | sed 's/^bindsym \$m
 alias h="history"
 alias hg="history | grep"
 alias cd="cdls"
+
+# Git aliases
+alias gst='git status'
+alias gaa='git add -A'
+alias gcm='git commit -m'
+alias gcma='git commit -a -m'
+alias gwait='git reset HEAD' # Unstages everything.
+alias gl='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+alias gundo='git reset --soft HEAD^' # Undoes the last commit and moves the files in the commit to staging.
+alias gco='git checkout'
+alias gpusho="git push origin ${parse_git_branch}"
+alias gpullo="git pull --rebase origin ${parse_git_branch}"
 
 xhost +local:root > /dev/null 2>&1
 
