@@ -3,6 +3,10 @@
 #
 [[ $- != *i* ]] && return
 
+# user variables
+export PACKTBOTEMAIL="norbiox.pi@gmail.com"
+export PACKTBOTPASSWORD="Malina314"
+
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
@@ -42,25 +46,20 @@ colors() {
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 
-# Git status function
-function parse_git_dirty {
- [[ -n "$(git status -s 2> /dev/null)" ]] && echo -e '\033[31m'
+# Git status functions
+function git_color {
+ if [ -z "$(git status -s 2> /dev/null)" ]
+ then 
+     echo -e '\e[0;32m'
+ else
+     echo -e '\e[0;31m'
+ fi
 }
 
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(parse_git_dirty)(\1)/"
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$(git_color)(\1)/"
 }
 
-
-# Change the window title of X terminals
-case ${TERM} in
-	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
-		;;
-	screen*)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
-		;;
-esac
 
 use_color=true
 
@@ -89,9 +88,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-            PS1="\[\e[1;34m\][\h\[\e[m\] \[\e[1;37m\]\W\[\e[m\][\e[1;34m\]]\[\e[m\]"
+            PS1="\[\e[1;34m\][\h \[\e[1;37m\]\W[\e[1;34m\]]"
 	else
-            PS1="\[\e[1;34m\][\u@\h\[\e[m\] \[\e[1;37m\]\W\[\e[m\]\[\e[1;34m\]]\[\e[m\]\[\e[32m\]\$(parse_git_branch)\[\e[00m\]\$ "
+            PS1="\[\e[1;34m\][\u@\h \[\e[1;37m\]\W\[\e[1;34m\]]\$(parse_git_branch)\[\e[00m\]\$ "
 	fi
 
 	alias ls='ls --color=auto'
@@ -100,7 +99,6 @@ if ${use_color} ; then
 	alias fgrep='fgrep --colour=auto'
 else
 	if [[ ${EUID} == 0 ]] ; then
-		# show root@ when we don't have colors
 		PS1='\u@\h \W \$ '
 	else
 		PS1='\u@\h \w \$ '

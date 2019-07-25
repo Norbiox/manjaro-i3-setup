@@ -1,59 +1,37 @@
-#include ".xcolors"
-
 ! #---Colors---#
-*.foreground:    FOREGROUND
-*.background:    BACKGROUND
-*.cursorColor:   CURSORCOLOR
-*.highlightColor:COLOR8
-
-! Black/Grey
-*.color0:        COLOR0
-*.color8:        COLOR8
-! Red dark/light
-*.color1:        COLOR1
-*.color9:        COLOR9
-! Green
-*.color2:        COLOR2
-*.color10:       COLOR10
-! Yellow dark/light
-*.color3:        COLOR3
-*.color11:       COLOR11
-! Blue
-*.color4:        COLOR4
-*.color12:       COLOR12
-! Magenta
-*.color5:        COLOR5
-*.color13:       COLOR13
-! Cyan
-*.color6:        COLOR6
-*.color14:       COLOR14
-! Blanco
-*.color7:        COLOR7
-*.color15:       COLOR15
+*.foreground:    #ABB2BF
+*.background:    #282C34
+*.cursorColor:   #ABB2BF
+*.highlightColor:#3E4452       
+                           
+! Black/Grey               
+*.color0:        #282C34
+*.color8:        #3E4452
+! Red dark/light        
+*.color1:        #BE5046
+*.color9:        #E06C75
+! Green                 
+*.color2:        #98C379
+*.color10:       #98C379
+! Yellow dark/light               
+*.color3:        #D19A66
+*.color11:       #E5C07B
+! Blue                  
+*.color4:        #61AFEF
+*.color12:       #61AFEF
+! Magenta               
+*.color5:        #C678DD
+*.color13:       #C678DD
+! Cyan                  
+*.color6:        #56B6C2
+*.color14:       #56B6C2
+! White dark/light             
+*.color7:        #5C6370
+*.color15:       #ABB2BF
 
 
 ! #---Font---#
 *.font:                     xft:FuraCode Nerd Font Mono:style=Retina:size=9
-
-
-! #---Xft---#
-Xft.dpi:       96
-Xft.antialias: true
-Xft.hinting:   true
-Xft.rgba:      rgb
-Xft.autohint:  false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
-
-
-! #---XTerm---#
-XTerm*background:        #222D31
-XTerm*foreground:        #d8d8d8
-XTerm*pointerColor:      #1ABB9B
-XTerm*faceName:          Fixed
-XTerm*faceSize:          11
-XTerm*reverseVideo:      on
-XTerm*selectToClipboard: true
 
 
 ! #---Xcursor---#
@@ -62,13 +40,20 @@ Xcursor.size:                     0
 
 
 ! #---URxvt---#
-URxvt*lineSpace:                    3
+URxvt*lineSpace:                    1
 
-URxvt.perl-ext-common: default,keyboard-select,resize-font
+URxvt.perl-ext-common: default,keyboard-select,font-size
 URxvt*perl-ext:                     url-select
 
 !URxvt.url-launcher:                 /usr/bin/xdg-open
 !URxvt.matcher.button:               1
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
 
 URxvt.keysym.M-Escape:              perl:keyboard-select:activate
 URxvt.keysym.M-slash:               perl:keyboard-select:search

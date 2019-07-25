@@ -6,11 +6,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'Norbiox/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'gabrielelana/vim-markdown'
 Plug 'itchyny/lightline.vim'
-Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
 call plug#end()
 
@@ -20,6 +18,8 @@ let g:lightline = {
     \ }
 colorscheme onedark
 syntax on
+
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 set relativenumber
 set clipboard=unnamedplus
