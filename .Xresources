@@ -1,37 +1,64 @@
 ! #---Colors---#
-*.foreground:    #ABB2BF
-*.background:    #282C34
-*.cursorColor:   #ABB2BF
-*.highlightColor:#3E4452       
-                           
-! Black/Grey               
-*.color0:        #282C34
-*.color8:        #3E4452
-! Red dark/light        
-*.color1:        #BE5046
-*.color9:        #E06C75
-! Green                 
-*.color2:        #98C379
-*.color10:       #98C379
-! Yellow dark/light               
-*.color3:        #D19A66
-*.color11:       #E5C07B
-! Blue                  
-*.color4:        #61AFEF
-*.color12:       #61AFEF
-! Magenta               
-*.color5:        #C678DD
-*.color13:       #C678DD
-! Cyan                  
-*.color6:        #56B6C2
-*.color14:       #56B6C2
-! White dark/light             
-*.color7:        #5C6370
-*.color15:       #ABB2BF
+! special
+*.foreground:   #ABB2BF
+*.background:   #282C34
+*.cursorColor:  #ABB2BF
+
+! black
+*.color0:       #282C34
+*.color8:       #3E4452
+
+! red
+*.color1:       #E06C75
+*.color9:       #BE5046
+
+! green
+*.color2:       #98C379
+*.color10:      #98C379
+
+! yellow
+*.color3:       #E5C07B
+*.color11:      #D19A66
+
+! blue
+*.color4:       #61AFEF
+*.color12:      #61AFEF
+
+! magenta
+*.color5:       #C678DD
+*.color13:      #C678DD
+
+! cyan
+*.color6:       #56B6C2
+*.color14:      #56B6C2
+
+! white
+*.color7:       #ABB2BF
+*.color15:      #5C6370
 
 
 ! #---Font---#
 *.font:                     xft:FuraCode Nerd Font Mono:style=Retina:size=9
+
+!
+! #---Xft---#
+Xft.dpi:       96
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.autohint:  false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+
+! #---XTerm---#
+XTerm*background:        #222D31
+XTerm*foreground:        #d8d8d8
+XTerm*pointerColor:      #1ABB9B
+XTerm*faceName:          Fixed
+XTerm*faceSize:          11
+XTerm*reverseVideo:      on
+XTerm*selectToClipboard: true
 
 
 ! #---Xcursor---#
