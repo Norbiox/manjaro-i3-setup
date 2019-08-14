@@ -16,7 +16,7 @@ yay -S \
     nerd-fonts-fira-code \
     ttf-fira-sans \
     ttf-symbola \
-    ttf-emojione \
+    twemoji-color-font \
     google-chrome \
     zathura zathura-pdf-poppler zathura-cb zathura-djvu zathura-ps \ # pdf viewer
     python-pip \

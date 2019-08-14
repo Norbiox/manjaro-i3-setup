@@ -38,7 +38,7 @@
 
 
 ! #---Font---#
-*.font:                     xft:FuraCode Nerd Font Mono:style=Retina:size=9
+*.font:         xft:FuraCode Nerd Font Mono:style=Retina:size=9
 
 !
 ! #---Xft---#
@@ -62,19 +62,18 @@ XTerm*selectToClipboard: true
 
 
 ! #---Xcursor---#
-Xcursor.theme: xcursor-breeze
-Xcursor.size:                     0
+Xcursor.theme:          xcursor-breeze
+Xcursor.size:           0
 
 
 ! #---URxvt---#
+URxvt*font:xft:FuraCode Nerd Font Mono:style=Medium:size=9,xft:Symbola,xft:Noto Emoji:minspace=False
+            
 URxvt*lineSpace:                    1
+URxvt*letterSpace:      0
 
 URxvt.perl-ext-common: default,keyboard-select,font-size
 URxvt*perl-ext:                     url-select
-
-!URxvt.url-launcher:                 /usr/bin/xdg-open
-!URxvt.matcher.button:               1
-
 URxvt.keysym.C-Up:     font-size:increase
 URxvt.keysym.C-Down:   font-size:decrease
 URxvt.keysym.C-S-Up:   font-size:incglobal
@@ -182,7 +181,6 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 ! URxvt*pointerColor2:              color
 ! URxvt*borderColor:                color
 ! URxvt*iconFile:                   file
-! URxvt*font:                       fontname
 ! URxvt*boldFont:                   fontname
 ! URxvt*italicFont:                 fontname
 ! URxvt*boldItalicFont:             fontname
